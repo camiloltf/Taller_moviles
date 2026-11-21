@@ -13,8 +13,7 @@ class MapScreen extends StatefulWidget {
 class _MapScreenState extends State<MapScreen> {
   GoogleMapController? _mapController;
   final Set<Marker> _markers = {};
-  LatLng _currentPosition =
-      const LatLng(4.6583, -74.0939); // Coordenada inicial
+  LatLng _currentPosition = const LatLng(4.6583, -74.0939);
   bool _isLoading = true;
 
   @override
@@ -62,7 +61,6 @@ class _MapScreenState extends State<MapScreen> {
     });
   }
 
-  // ---- A PARTIR DE AQUÍ NO APARECE EN EL PDF (completado) ----
   @override
   Widget build(BuildContext context) {
     return Scaffold(

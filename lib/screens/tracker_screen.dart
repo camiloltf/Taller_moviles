@@ -61,7 +61,6 @@ class _TrackerScreenState extends State<TrackerScreen> {
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF2E7D32),
-                // ---- A PARTIR DE AQUÍ NO APARECE EN EL PDF (completado) ----
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 14),
               ),

@@ -26,17 +26,15 @@ class _StepCounterWidgetState extends State<StepCounterWidget> {
   }
 
   void _startSensorMonitoring() {
-    // Acumula distancia cada segundo mientras se detecta movimiento de caminata
     _walkTimer = Timer.periodic(const Duration(seconds: 1), (_) {
       if (_isWalking) {
         setState(() {
-          _distanceMeters += 1.2; // Velocidad promedio estimada (1.2 m/s)
+          _distanceMeters += 1.2;
         });
         widget.onDistanceUpdated(_distanceMeters);
       }
     });
 
-    // Escucha el giroscopio para detectar la rotación rítmica del paso
     _gyroSubscription = gyroscopeEventStream().listen((GyroscopeEvent event) {
       final double rotationMagnitude = sqrt(
         event.x * event.x + event.y * event.y + event.z * event.z,
@@ -62,7 +60,6 @@ class _StepCounterWidgetState extends State<StepCounterWidget> {
     super.dispose();
   }
 
-  // ---- A PARTIR DE AQUÍ NO APARECE EN EL PDF (completado) ----
   @override
   Widget build(BuildContext context) {
     return Card(
